@@ -1,0 +1,64 @@
+[
+  {
+    "id": "q1",
+    "question": "How does your school currently handle marketing and communications?",
+    "options": [
+      "Dedicated marketing staff",
+      "Admin/teachers handle it",
+      "We outsource to an agency",
+      "We don’t do much marketing right now"
+    ]
+  },
+  {
+    "id": "q2",
+    "question": "What marketing channels does your school currently use?",
+    "options": [
+      "Facebook",
+      "Instagram",
+      "School website/blog",
+      "Newsletters",
+      "Local media/press",
+      "Other (please specify)"
+    ]
+  },
+  {
+    "id": "q3",
+    "question": "What are your biggest marketing challenges?",
+    "options": [
+      "Keeping up with regular content creation",
+      "Attracting more students/admissions",
+      "Engaging parents & the community",
+      "Promoting school achievements",
+      "Managing social media effectively",
+      "Lack of time/resources",
+      "Other (please specify)"
+    ]
+  },
+  {
+    "id": "q4",
+    "question": "What EduPulse features are most appealing to you?",
+    "options": [
+      "Automated social media content",
+      "Press release & newsletter generation",
+      "Calendar-based marketing planning",
+      "Trust/governor report summaries",
+      "Saving time on school marketing",
+      "Other (please specify)"
+    ]
+  },
+  {
+    "id": "q5",
+    "question": "Would your school be interested in a Trust-wide discount?",
+    "options": ["Yes", "No", "Unsure"]
+  },
+  {
+    "id": "q6",
+    "question": "Would you be open to a short call/demo to discuss your needs?",
+    "options": ["Yes", "No"]
+  },
+  {
+    "id": "q7",
+    "question": "Would you like to receive early access updates and marketing tips for schools?",
+    "options": ["Yes", "No"]
+  }
+]
