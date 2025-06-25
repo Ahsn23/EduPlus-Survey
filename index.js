@@ -1,10 +1,17 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const rateLimit = require("express-rate-limit");
+const cors = require("cors"); 
 const handleSurvey = require("./src/controller/handleSurvey");
 
 const app = express();
 const port = 3000;
+
+app.use(
+  cors({
+    origin: "http://localhost:8080",
+  })
+);
 
 app.use(bodyParser.json());
 
