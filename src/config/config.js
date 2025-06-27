@@ -16,4 +16,7 @@ const MAILER_CONFIG = {
   from: getEnv("SMTP_FROM"),
 };
 
-module.exports = { MAILER_CONFIG };
+const corsOriginsRaw = getEnv("CORS_ORIGINS"); // 🌟 only call once
+const CORS_ORIGINS = corsOriginsRaw ? corsOriginsRaw.split(",") : [];
+
+module.exports = { MAILER_CONFIG, CORS_ORIGINS };
