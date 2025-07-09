@@ -57,7 +57,7 @@ const handleSurvey = async (req, res) => {
 
   const mailDetails = {
     from: MAILER_CONFIG.from,
-    to: recipientEmail,
+    to: MAILER_CONFIG.clientEmail, 
     subject: "📋 Survey Submission Results",
     html: htmlContent,
   };

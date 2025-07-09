@@ -14,6 +14,7 @@ const MAILER_CONFIG = {
   service: getEnv("SMTP_SERVICE"),
   pass: getEnv("SMTP_PASS"),
   from: getEnv("SMTP_FROM"),
+  clientEmail: getEnv("CLIENT_EMAIL"),
 };
 
 const corsOriginsRaw = getEnv("CORS_ORIGINS"); // 🌟 only call once
