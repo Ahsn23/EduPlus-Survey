@@ -4,7 +4,6 @@ const rateLimit = require("express-rate-limit");
 const cors = require("cors");
 const handleSurvey = require("./src/controller/handleSurvey");
 const { CORS_ORIGINS } = require("./src/config/config");
-const questions = require("./src/config/questions.json");
 
 const app = express();
 const port = 3000;
@@ -32,11 +31,6 @@ const surveyLimiter = rateLimit({
   message: {
     error: "Too many submissions from this IP, please try again later",
   },
-});
-
-// Endpoint to get survey questions
-app.get("/questions", (req, res) => {
-  res.json(questions);
 });
 
 app.post("/start-survey", surveyLimiter, handleSurvey);
