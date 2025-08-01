@@ -6,7 +6,7 @@ const handleSurvey = require("./src/controller/handleSurvey");
 const { CORS_ORIGINS } = require("./src/config/config");
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT;
 
 app.use(
   cors({
