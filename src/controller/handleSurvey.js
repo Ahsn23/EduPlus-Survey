@@ -7,11 +7,28 @@ const handleSurvey = async (req, res) => {
   const responses = req.body.responses;
   const recipientEmail = req.body.email;
 
-  const result = responses.map(({ questionId, selectedIndexes, otherText }) => {
-    const questionObj = getAnswerByQuestionId(questionId, selectedIndexes);
-    const options = [...questionObj.options];
+  const result = responses.map(({ questionId, selectedIndexes, otherText, textAnswer }) => {
+    const questionObj = getAnswerByQuestionId(questionId, selectedIndexes, textAnswer);
+    
+    if (!questionObj) {
+      return null;
+    }
 
-    const hasOther = selectedIndexes.includes(options.length - 1);
+    // Handle text-based questions
+    if (questionObj.type === 'text' || questionObj.type === 'email') {
+      return {
+        questionId,
+        question: questionObj.question,
+        section: questionObj.section,
+        type: questionObj.type,
+        answer: questionObj.answer,
+        options: null
+      };
+    }
+
+    // Handle choice-based questions
+    const options = [...questionObj.options];
+    const hasOther = selectedIndexes && selectedIndexes.includes(options.length - 1);
     if (hasOther && otherText) {
       options[options.length - 1] = `${
         options[options.length - 1]
@@ -20,15 +37,17 @@ const handleSurvey = async (req, res) => {
 
     const optionsWithHighlight = options.map((opt, index) => ({
       text: opt,
-      isSelected: selectedIndexes.includes(index),
+      isSelected: selectedIndexes ? selectedIndexes.includes(index) : false,
     }));
 
     return {
       questionId,
       question: questionObj.question,
+      section: questionObj.section,
+      type: questionObj.type,
       options: optionsWithHighlight,
     };
-  });
+  }).filter(Boolean); // Remove any null entries
 
   const htmlContent = `
   <div style="font-family: 'Segoe UI', Roboto, sans-serif; background: #F8F6FE; padding: 40px; border-radius: 24px;">
@@ -57,8 +76,8 @@ const handleSurvey = async (req, res) => {
 
   const mailDetails = {
     from: MAILER_CONFIG.from,
-    to: MAILER_CONFIG.clientEmail, 
-    subject: "📋 Survey Submission Results",
+    to: "hello@edupulse.co.uk", 
+    subject: "📋 EduPlus Survey Submission Results",
     html: htmlContent,
   };
 
