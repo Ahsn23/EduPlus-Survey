@@ -5,10 +5,10 @@ services:
     build: .
     restart: on-failure
     ports:
-      - "3012:3012"
+      - "3000:3000"
     environment:
       # Port & Env
-      PORT: 3012
+      PORT: 3000
       NODE_ENV: development
 
       SMTP_HOST: mail.esparkconsultants.com
