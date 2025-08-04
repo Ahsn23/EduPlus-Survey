@@ -1,17 +1,63 @@
 [
   {
     "id": "q1",
-    "question": "How does your school currently handle marketing and communications?",
+    "section": "Basic Information",
+    "question": "School Name (Required)",
+    "type": "text",
+    "required": true
+  },
+  {
+    "id": "q2",
+    "section": "Basic Information",
+    "question": "School Type (Select one)",
+    "type": "single-choice",
+    "options": [
+      "Primary",
+      "Secondary",
+      "Special Education",
+      "Independent",
+      "Academy Trust",
+      "Other (please specify)"
+    ]
+  },
+  {
+    "id": "q3",
+    "section": "Basic Information",
+    "question": "School Location (City, Region, Country)",
+    "type": "text",
+    "required": true
+  },
+  {
+    "id": "q4",
+    "section": "Basic Information",
+    "question": "Name & Role in School (e.g., Headteacher, Marketing Lead, Admin Staff)",
+    "type": "text",
+    "required": true
+  },
+  {
+    "id": "q5",
+    "section": "Basic Information",
+    "question": "Email Address (Required)",
+    "type": "email",
+    "required": true
+  },
+  {
+    "id": "q6",
+    "section": "Marketing & Engagement",
+    "question": "How does your school currently handle marketing and communications? (Select all that apply)",
+    "type": "multiple-choice",
     "options": [
       "Dedicated marketing staff",
       "Admin/teachers handle it",
       "We outsource to an agency",
-      "We don’t do much marketing right now"
+      "We don't do much marketing right now"
     ]
   },
   {
-    "id": "q2",
-    "question": "What marketing channels does your school currently use?",
+    "id": "q7",
+    "section": "Marketing & Engagement",
+    "question": "What marketing channels does your school currently use? (Select all that apply)",
+    "type": "multiple-choice",
     "options": [
       "Facebook",
       "Instagram",
@@ -22,8 +68,10 @@
     ]
   },
   {
-    "id": "q3",
-    "question": "What are your biggest marketing challenges?",
+    "id": "q8",
+    "section": "Marketing & Engagement",
+    "question": "What are your biggest marketing challenges? (Select top 2-3)",
+    "type": "multiple-choice",
     "options": [
       "Keeping up with regular content creation",
       "Attracting more students/admissions",
@@ -35,8 +83,10 @@
     ]
   },
   {
-    "id": "q4",
-    "question": "What EduPulse features are most appealing to you?",
+    "id": "q9",
+    "section": "Interest in EduPulse",
+    "question": "What EduPulse features are most appealing to you? (Select all that apply)",
+    "type": "multiple-choice",
     "options": [
       "Automated social media content",
       "Press release & newsletter generation",
@@ -47,18 +97,24 @@
     ]
   },
   {
-    "id": "q5",
+    "id": "q10",
+    "section": "Interest in EduPulse",
     "question": "Would your school be interested in a Trust-wide discount?",
+    "type": "single-choice",
     "options": ["Yes", "No", "Unsure"]
   },
   {
-    "id": "q6",
+    "id": "q11",
+    "section": "Interest in EduPulse",
     "question": "Would you be open to a short call/demo to discuss your needs?",
+    "type": "single-choice",
     "options": ["Yes", "No"]
   },
   {
-    "id": "q7",
+    "id": "q12",
+    "section": "Final Opt-in & CTA",
     "question": "Would you like to receive early access updates and marketing tips for schools?",
+    "type": "single-choice",
     "options": ["Yes", "No"]
   }
 ]
