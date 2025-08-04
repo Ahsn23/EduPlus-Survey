@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  app-luccy-landing-be:
+    build: .
+    restart: on-failure
+    ports:
+      - "3012:3012"
+    environment:
+      # Port & Env
+      PORT: 3012
+      NODE_ENV: development
+
+      SMTP_HOST: mail.esparkconsultants.com
+      SMTP_PORT: 465
+      SMTP_SECURE: true
+      SMTP_SERVICE: mail
+      SMTP_PASS: I[2nz4L=}z8D
+      SMTP_FROM: shwcase@esparkconsultants.com
+      CORS_ORIGINS: http://localhost:3000,https://eduplus.com,https://www.edupulse.co.uk
+      CLIENT_EMAIL: hello@edupulse.co.uk
