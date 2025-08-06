@@ -7,7 +7,7 @@ const { CORS_ORIGINS } = require("./src/config/config");
 const questions = require("./src/config/questions.json");
 
 const app = express();
-const port = process.env.PORT;
+const port = process.env.PORT || 3002;
 
 app.use(
   cors({

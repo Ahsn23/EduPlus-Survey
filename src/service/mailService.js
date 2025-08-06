@@ -3,13 +3,13 @@ const { MAILER_CONFIG } = require("../config/config");
 
 const transporter = nodemailer.createTransport({
   service: MAILER_CONFIG.service,
-  host: "mail.esparkconsultants.com",
-  port: 465, // Typically 465 for SSL/TLS
+  host: MAILER_CONFIG.host,
+  port: MAILER_CONFIG.port, // Typically 465 for SSL/TLS
   secure: true, // true for SSL
   auth: {
     user: MAILER_CONFIG.from,
     pass: MAILER_CONFIG.pass,
-  },
+  },  
 });
 
 class MailService {
